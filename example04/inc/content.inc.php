@@ -51,7 +51,7 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
         // Time for some SQL
         $sql = "INSERT INTO student (first_name,last_name,student_id,email,phone) ";
         $sql .= "VALUES ('$first','$last',$id,'$email','$phone')";
-        //echo $sql;
+        echo $sql;
         $result = $db->query($sql);
         if (!$result) {
             echo "<p>I'm sorry, but I could not save that record for you.</p>";
