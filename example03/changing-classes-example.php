@@ -5,7 +5,7 @@
 	<title>Changing Classes in Elements with PHP</title>
 	<style>
 		body {color:#333333;font-size:2em;}
-		.stuff {color:#000000;}
+		.stuff {color:#336699;}
 		.color1 {color:#336699;}
 		.color2 {color:#ff0000;}
 	</style>
@@ -13,12 +13,13 @@
 <body>
     <?php 
         // code for sticky select
-        $selected = '';
+		$color1 = '';
+		$color2 = '';
         if (isset($_POST['color'])) {
             if ($_POST['color'] == 'color1') {
-                $selected = 'selected';
+                $color1 = 'selected';
             } else if ($_POST['color'] == 'color2') {
-                $selected = 'selected';
+                $color2 = 'selected';
             }
         }
     ?>
@@ -26,8 +27,8 @@
 	<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="POST">
 		<label for="color">Select a color: </label>
 		<select name="color" id="color">
-			<option value="color1" <?php echo $selected;?>>Blue</option>
-			<option value="color2" <?php echo $selected;?>>Red</option>
+			<option value="color1" <?php echo $color1;?>>Blue</option>
+			<option value="color2" <?php echo $color2;?>>Red</option>
 		</select>
 		<br>
 		<input type="submit" value="Go!">

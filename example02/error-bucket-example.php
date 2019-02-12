@@ -17,7 +17,7 @@ array_push($errors, "Please fill in the name field");
 array_push($errors, "Please select a state from the list");
 
 # if the array has elements
-if (count($errors > 0)) {
+if (count($errors) > 0) {
     echo "<h3>List of Errors (error bucket)</h3>";
     echo "<ul>";
     # loop through the array elements
