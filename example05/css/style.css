@@ -1,0 +1,24 @@
+/* style.css */
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #fafafa;
+}
+
+.table .thead-dark th {
+    background-color: #336699;
+}
+
+th a:link, th a:visited, th a:hover, th a:active {
+    color: #ffffff;
+}
+
+.selectedlink {
+    color: #000000;
+}
+
+.selectedlink:hover {
+    text-decoration: underline;
+}
