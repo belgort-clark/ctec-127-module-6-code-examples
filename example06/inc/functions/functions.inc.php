@@ -2,23 +2,23 @@
 function display_letter_filters($filter){  
     echo "<p>Select a letter to filter by <strong>Last Name</strong></p>";
 
-    echo '<u><a class="text-secondary p-2 mr-3 bg-light border rounded" href="?clearfilter" title="Clear Filter">Clear Filter</a></u>&nbsp;&nbsp;';
+    echo '<u><a class="text-secondary p-1 mr-2 bg-light border rounded" href="?clearfilter" title="Reset Filter">Reset</a></u>&nbsp;&nbsp;';
 
     # create a select dropdown
     $letters = range('A','Z');
 
     for($i=0; $i < count($letters) ; $i++){ 
         if ($filter == $letters[$i]) {
-            $class = 'class="text-light font-weight-bold p-2 mr-3 bg-dark"';
+            $class = 'class="text-light font-weight-bold p-1 mr-2 bg-dark"';
         } else {
-            $class = 'class="text-secondary p-2 mr-3 bg-light border rounded"';
+            $class = 'class="text-secondary p-1 mr-2 bg-light border rounded"';
         }
 
         echo "<u><a $class href='?filter=$letters[$i]' title='$letters[$i]'>$letters[$i]</a></u>&nbsp;&nbsp;";
     }
 }
 
-function display_student_table($result){
+function display_record_table($result){
     echo '<div class="table-responsive">';
     echo '<table class="mt-4 table table-striped table-hover">';
     echo '<thead class="thead-dark"><tr><th>Actions</th><th><a href="?sortby=student_id">Student ID</a></th><th><a href="?sortby=first_name">First Name</a></th><th><a href="?sortby=last_name">Last Name</a></th><th><a href="?sortby=email">Email</a></th><th><a href="?sortby=phone">Phone</a></th></tr></thead>';
