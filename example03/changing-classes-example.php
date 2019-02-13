@@ -5,30 +5,31 @@
 	<title>Changing Classes in Elements with PHP</title>
 	<style>
 		body {color:#333333;font-size:2em;}
-		.stuff {color:#336699;}
+		.stuff {color:#000000;}
 		.color1 {color:#336699;}
 		.color2 {color:#ff0000;}
 	</style>
 </head>
 <body>
-    <?php 
-        // code for sticky select
-		$color1 = '';
-		$color2 = '';
-        if (isset($_POST['color'])) {
-            if ($_POST['color'] == 'color1') {
-                $color1 = 'selected';
-            } else if ($_POST['color'] == 'color2') {
-                $color2 = 'selected';
-            }
-        }
+	<?php 
+		// StickySelect('value','select');
+		// Function developed by Xavier C.
+		function StickySelect($value, $selectName){
+			if (isset($_POST["$selectName"])){
+				$checker = $_POST["$selectName"];
+				if ($checker == $value){
+					echo "selected";
+				}
+			}
+		}
+
     ?>
 	<h1>Make the text on this page change color!</h1>
 	<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="POST">
 		<label for="color">Select a color: </label>
 		<select name="color" id="color">
-			<option value="color1" <?php echo $color1;?>>Blue</option>
-			<option value="color2" <?php echo $color2;?>>Red</option>
+			<option value="color1" <?php StickySelect('color1', 'color');?>>Blue</option>
+			<option value="color2" <?php StickySelect('color2', 'color');?>>Red</option>
 		</select>
 		<br>
 		<input type="submit" value="Go!">
