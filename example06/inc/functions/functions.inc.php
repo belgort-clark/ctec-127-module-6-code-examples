@@ -1,10 +1,8 @@
 <?php
 function display_letter_filters($filter){  
     echo "<p>Select a letter to filter by <strong>Last Name</strong></p>";
-
     echo '<u><a class="text-secondary p-1 mr-2 bg-light border rounded" href="?clearfilter" title="Reset Filter">Reset</a></u>&nbsp;&nbsp;';
 
-    # create a select dropdown
     $letters = range('A','Z');
 
     for($i=0; $i < count($letters) ; $i++){ 
@@ -13,7 +11,6 @@ function display_letter_filters($filter){
         } else {
             $class = 'class="text-secondary p-1 mr-2 bg-light border rounded"';
         }
-
         echo "<u><a $class href='?filter=$letters[$i]' title='$letters[$i]'>$letters[$i]</a></u>&nbsp;&nbsp;";
     }
 }
@@ -34,7 +31,7 @@ function display_record_table($result){
         echo "<td>{$row['phone']}</td>";
         echo '</tr>';
     } // end while
-    // closing table tag
+    // closing table tag and div
     echo '</table>';
     echo '</div>';
 }
@@ -42,11 +39,11 @@ function display_record_table($result){
 function display_error_bucket($error_bucket){
     echo '<p>The following errors were deteced:</p>';
     echo '<div class="alert alert-warning" role="alert">';
-    echo '<ul>';
-    foreach ($error_bucket as $text){
-        echo '<li>' . $text . '</li>';
-    }
-    echo '</ul>';
+        echo '<ul>';
+        foreach ($error_bucket as $text){
+            echo '<li>' . $text . '</li>';
+        }
+        echo '</ul>';
     echo '</div>';
     echo '<p>All of these fields are required. Please fill them in.</p>';
 }
