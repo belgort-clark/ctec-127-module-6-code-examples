@@ -11,12 +11,13 @@ body {
     background-color: #336699;
 }
 
-/* Embedded CSS for learning only */
-label {display: inline-block;
-    width:150px;
-    font-style: bold;
-    margin-bottom: 1em;
+label {
+        display: inline-block;
+        width:150px;
+        font-style: bold;
+        margin-bottom: 1em;
 }
-.errors {color:#ff0000;
+.errors {
+        color:#ff0000;
         font-weight: bold;
 }
