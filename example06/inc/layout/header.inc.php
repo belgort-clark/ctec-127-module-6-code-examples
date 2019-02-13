@@ -7,7 +7,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <title>$pageTitle</title>
+    <title><?php echo $pageTitle; ?></title>
 </head>
 <body>
 <?php require 'inc/layout/navbar.inc.php';?> 

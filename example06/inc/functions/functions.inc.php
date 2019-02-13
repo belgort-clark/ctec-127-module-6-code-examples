@@ -41,10 +41,13 @@ function display_student_table($result){
 
 function display_error_bucket($error_bucket){
     echo '<p>The following errors were deteced:</p>';
+    echo '<div class="alert alert-warning" role="alert">';
     echo '<ul>';
     foreach ($error_bucket as $text){
         echo '<li>' . $text . '</li>';
     }
     echo '</ul>';
+    echo '</div>';
+    echo '<p>All of these fields are required. Please fill them in.</p>';
 }
 ?>

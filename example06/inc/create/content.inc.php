@@ -53,9 +53,13 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
 
         $result = $db->query($sql);
         if (!$result) {
-            echo "<p>I'm sorry, but I could not save that record for you.</p>";
+            echo '<div class="alert alert-danger" role="alert">
+            I am sorry, but I could not save that record for you.
+          </div>';
         } else {
-            echo "<p>Success! I stored that data for you!</p>";
+            echo '<div class="alert alert-success" role="alert">
+            I saved that new record for you!
+          </div>';
             unset($first);
             unset($last);
             unset($id);
