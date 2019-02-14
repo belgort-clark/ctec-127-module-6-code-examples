@@ -3,6 +3,7 @@
     require 'inc/layout/header.inc.php';
     require 'inc/db/mysqli_connect.inc.php';
     require 'inc/functions/functions.inc.php';
+    require 'inc/app/config.inc.php';
 ?>
 
 <div class="container">
@@ -16,15 +17,17 @@
                     $result = $db->query($sql);
 
                     if ($result->num_rows == 0) {
-                        echo "<h2 class=\"mt-4\">No results found for \"<strong>{$_POST['search']}</strong>\"</h2>";
-                        echo '<img class="mx-auto d-block" src="img/frown.png" alt="A sad face">';
+                        echo "<p class=\"display-4 mt-4 text-center\">No results found for \"<strong>{$_POST['search']}</strong>\"</p>";
+                        echo '<img class="mx-auto d-block mt-4" src="img/frown.png" alt="A sad face">';
+                        echo "<p class=\"display-4 mt-4 text-center\">Please try again.</p>";
                         // echo "<h2 class=\"mt-4\">There are currently no records to display for <strong>last names</strong> starting with <strong>$filter</strong></h2>";
                     } else {
-                        echo "<h2 class=\"mt-4\">$result->num_rows record(s) found for \"" . $_POST['search'] . '"</h2>';
+                        echo "<h2 class=\"mt-4 text-center\">$result->num_rows record(s) found for \"" . $_POST['search'] . '"</h2>';
                         display_record_table($result);
                     }
                 } else {
-                    echo "<p>I can't search if you don't give me something to search for.</p>";
+                    echo "<p class=\"display-4 mt-4 text-center\">I can't search if you don't give<br>me something to search for.</p>";
+                    echo '<img class="mx-auto d-block mt-4" src="img/nosmile.png" alt="A face with no smile">';
                 }
             }
         ?>

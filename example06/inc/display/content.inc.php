@@ -23,14 +23,14 @@ $sql = "SELECT * FROM $db_table WHERE last_name LIKE '$filter%' ORDER BY $orderb
 $result = $db->query($sql);
 
 if ($result->num_rows == 0) {
-    echo "<h2 class=\"mt-4\">There are currently no records to display for <strong>last names</strong> starting with <strong>$filter</strong></h2>";
+    echo "<h2 class=\"mt-4 alert alert-warning\">No Records for <strong>last names</strong> starting with <strong>$filter</strong></h2>";
 } else {
     if(empty($filter)){
         $text = '';
     } else {
-        $text = " - filtered by last name starting with $filter";
+        $text = " - last names starting with $filter";
     }
-    echo "<h2 class=\"mt-4\">$result->num_rows records" . $text . '</h2>';
+    echo "<h2 class=\"mt-4 alert alert-primary\">$result->num_rows Records" . $text . '</h2>';
 }
 
 // display alphabet filters

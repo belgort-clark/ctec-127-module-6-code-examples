@@ -2,6 +2,7 @@
 
 require __DIR__ . "/../db/mysqli_connect.inc.php";
 require __DIR__ . "/../functions/functions.inc.php";
+require __DIR__ . "/../app/config.inc.php";
 
 $error_bucket = [];
 
@@ -54,8 +55,8 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
         $result = $db->query($sql);
         if (!$result) {
             echo '<div class="alert alert-danger" role="alert">
-            I am sorry, but I could not save that record for you.
-          </div>';
+            I am sorry, but I could not save that record for you. ' .  
+            $db->error . '.</div>';
         } else {
             echo '<div class="alert alert-success" role="alert">
             I saved that new record for you!
